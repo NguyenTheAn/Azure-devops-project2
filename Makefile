@@ -1,4 +1,2 @@
-start:
-	echo "start service"
-install:
-	echo "install service"
+test:
+	python -m pytest -vv test_adder.py
