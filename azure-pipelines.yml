@@ -14,7 +14,7 @@ variables:
   webAppName: 'azureproject2'
   pythonVersion: 3.7
   # Environment name
-  # environmentName: ''
+  environmentName: ''
   # Project root folder. Point to the folder containing manage.py file.
   projectRoot: $(System.DefaultWorkingDirectory)
   
@@ -53,6 +53,7 @@ stages:
     pool:
       name: "Default"
       vmImage: $(vmImageName)
+    environment: $(environmentName)
     strategy:
       runOnce:
         deploy:
