@@ -1,5 +1,8 @@
 install:
-	pip install pytest
+	pip install --upgrade pip && pip install -r requirements.txt
 test:
 	python -m pytest -vv test.py
-all: install test
+lint:
+	python -m pylint --disable=R,C test.py
+
+all: install lint test
