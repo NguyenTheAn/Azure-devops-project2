@@ -30,6 +30,7 @@ stages:
       vmImage: $(vmImageName)
     steps:
     - script: |
+        ls -a
         make install
       workingDirectory: $(projectRoot)
       displayName: "Install requirements"
