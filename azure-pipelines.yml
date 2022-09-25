@@ -6,22 +6,22 @@
 trigger:
 - main
 
+pool:
+  name: "Default"
+  vmImage: ubuntu-latest
+
 variables:
   # Azure Resource Manager connection created during pipeline creation
   azureServiceConnectionId: '6349c9d6-ded6-4c5f-9f03-fc7d9079a332'
   # Web app name
   webAppName: 'azureproject2'
-  vmImageName: 'ubuntu-latest'
   # Environment name
   # environmentName: ''
   # Project root folder. Point to the folder containing manage.py file.
   # projectRoot: $(System.DefaultWorkingDirectory)
   # Python version: 3.7
   pythonVersion: '3.7'
-
-pool: Default
   
-
 stages:
 - stage: Build
   displayName: Build stage
