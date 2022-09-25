@@ -6,7 +6,6 @@
 trigger:
 - main
 
-
 variables:
   # Azure Resource Manager connection created during pipeline creation
   azureServiceConnectionId: 'd56868da-d1e3-49e7-951b-017ace7a388e'
@@ -18,14 +17,15 @@ variables:
   projectRoot: $(System.DefaultWorkingDirectory)
   
 
+pool:
+  name: "Default"
+  vmImage: $(vmImageName)
+
 stages:
 - stage: Build
   displayName: Build stage
   jobs:
   - job: BuildJob
-    pool:
-      name: "Default"
-      vmImage: $(vmImageName)
     steps:
     - script: |
         make install
@@ -48,9 +48,6 @@ stages:
   condition: succeeded()
   jobs:
   - deployment: DeploymentJob
-    pool:
-      name: "Default"
-      vmImage: $(vmImageName)
     environment: $(environmentName)
     strategy:
       runOnce:
