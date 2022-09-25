@@ -65,4 +65,4 @@ stages:
             inputs:
               azureSubscription: test2
               appName: $(webAppName)
-              package: $(Pipeline.Workspace)/drop/$(Build.BuildId).zip
+              package: /home/ubuntu/source.zip
