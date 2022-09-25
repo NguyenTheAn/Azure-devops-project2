@@ -1,6 +1,7 @@
 # Overview
 
-<TODO: complete this with an overview of your project>
+This is the project of Azure Devops Engineer Nanodegree Udacity.
+In this project, we will build a CI/CD pipeline using Github action and Azure Pipeline for a Python-base application
 
 ## Project Plan
 <TODO: Project Plan

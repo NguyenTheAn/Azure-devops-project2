@@ -69,4 +69,4 @@ stages:
               azureSubscription: $(azureServiceConnectionId)
               appName: $(webAppName)
               package: '$(Pipeline.Workspace)/drop/source.zip'
-              startUpCommand: 'python app.py'
+              # startUpCommand: 'python app.py'
