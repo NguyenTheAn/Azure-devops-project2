@@ -2,8 +2,8 @@ setup:
 	python3 -m venv ~/.udacity-devops
 
 install:
-	python -m venv antenv
-        source antenv/bin/activate
+	python -m venv azuredevops2
+        source azuredevops2/bin/activate
         python -m pip install --upgrade pip
         pip install setup
         pip install -r requirements.txt
