@@ -14,7 +14,7 @@ variables:
   webAppName: 'azureproject2'
   pythonVersion: 3.7
   # Environment name
-  environmentName: ''
+  environmentName: 'test'
   # Project root folder. Point to the folder containing manage.py file.
   projectRoot: $(System.DefaultWorkingDirectory)
   
