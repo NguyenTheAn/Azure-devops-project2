@@ -16,8 +16,6 @@ variables:
   # environmentName: ''
   # Project root folder. Point to the folder containing manage.py file.
   # projectRoot: $(System.DefaultWorkingDirectory)
-  # Python version: 3.7
-  pythonVersion: '3.7'
   
 
 stages:
@@ -29,10 +27,6 @@ stages:
       name: "Default"
       vmImage: $(vmImageName)
     steps:
-    - task: UsePythonVersion@0
-      inputs:
-        versionSpec: '$(pythonVersion)'
-      displayName: 'Use Python $(pythonVersion)'
     - script: |
         make install
       workingDirectory: $(projectRoot)
