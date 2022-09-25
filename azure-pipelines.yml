@@ -11,8 +11,6 @@ variables:
   azureServiceConnectionId: '6349c9d6-ded6-4c5f-9f03-fc7d9079a332'
   # Web app name
   webAppName: 'azureproject2'
-  # Agent VM image name
-  vmImageName: 'ubuntu-latest'
   # Environment name
   # environmentName: ''
   # Project root folder. Point to the folder containing manage.py file.
@@ -22,6 +20,7 @@ variables:
 
 pool:
   name: Default
+  vmImageName: 'ubuntu-latest'
 
 stages:
 - stage: Build
