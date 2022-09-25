@@ -3,7 +3,7 @@ from flask.logging import create_logger
 import logging
 
 import pandas as pd
-import joblib
+from sklearn.externals import joblib
 from sklearn.preprocessing import StandardScaler
 
 app = Flask(__name__)
@@ -53,7 +53,6 @@ def predict():
     { "prediction": [ 20.35373177134412 ] }
 
     """
-
     try:
         clf = joblib.load("boston_housing_prediction.joblib")
     except:
