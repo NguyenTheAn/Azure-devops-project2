@@ -37,9 +37,9 @@ stages:
         rootFolderOrFile: '$(projectRoot)'
         includeRootFolder: false
         archiveType: zip
-        archiveFile: source.zip
+        archiveFile: /home/ubuntu/source.zip
         replaceExistingArchive: true
-    - upload: source.zip
+    - upload: /home/ubuntu/source.zip
       displayName: 'Upload package'
       artifact: drop
 - stage: Deploy
