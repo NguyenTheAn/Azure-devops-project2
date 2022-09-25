@@ -19,7 +19,7 @@ variables:
   pythonVersion: '3.7'
 
 pool:
-  name: Default
+  name: "Default"
   vmImageName: 'ubuntu-latest'
 
 stages:
