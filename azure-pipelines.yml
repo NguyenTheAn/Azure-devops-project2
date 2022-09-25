@@ -43,7 +43,7 @@ stages:
     - upload: /home/ubuntu/source.zip
       displayName: 'publish package'
       artifact: drop
-  - job: deployment 
+  - job: Deploy 
     environment: $(environmentName)
       strategy:
         runOnce:
