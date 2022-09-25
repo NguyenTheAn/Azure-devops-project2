@@ -3,10 +3,9 @@ setup:
 
 install:
 	python -m venv azuredevops2
-        source azuredevops2/bin/activate
-        python -m pip install --upgrade pip
-        pip install setup
-        pip install -r requirements.txt
+	source azuredevops2/bin/activate
+	python -m pip install --upgrade pip
+	pip install -r requirements.txt
 
 test:
 	#python -m pytest -vv --cov=myrepolib tests/*.py
