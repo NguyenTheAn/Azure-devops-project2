@@ -43,22 +43,30 @@ stages:
     - upload: /home/ubuntu/source.zip
       displayName: 'publish package'
       artifact: drop
-- stage: Deploy
-  displayName: 'Deploy Web App'
-  dependsOn: Build
-  condition: succeeded()
-  jobs:
   - job: deployment 
-    pool:
-      name: "Default"
-      vmImage: $(vmImageName)
     environment: $(environmentName)
-    strategy:
-      runOnce:
-        deploy:
-          steps:
-          - script: |
-              echo "test"
+      strategy:
+        runOnce:
+          deploy:
+            steps:
+            - script: |
+                echo "test"
+# - stage: Deploy
+#   displayName: 'Deploy Web App'
+#   dependsOn: Build
+#   condition: succeeded()
+#   jobs:
+#   - job: deployment 
+#     pool:
+#       name: "Default"
+#       vmImage: $(vmImageName)
+#     environment: $(environmentName)
+#     strategy:
+#       runOnce:
+#         deploy:
+#           steps:
+#           - script: |
+#               echo "test"
           # - task: UsePythonVersion@0
           #   inputs:
           #     versionSpec: '$(pythonVersion)'
