@@ -60,9 +60,6 @@ stages:
       runOnce:
         deploy:
           steps:
-          - script: |
-            conda activate test
-          displayName: "activate env"
           # - task: UsePythonVersion@0
           #   inputs:
           #     versionSpec: '$(pythonVersion)'
