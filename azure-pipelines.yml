@@ -49,8 +49,17 @@ stages:
         runOnce:
           deploy:
             steps:
-            - script: |
-                echo "test"
+            - task: UsePythonVersion@0
+              inputs:
+                versionSpec: '$(pythonVersion)'
+              displayName: 'Use Python version'
+            - task: AzureWebApp@1
+              displayName: 'Deploy Azure Web App : '
+              inputs:
+                azureSubscription: $(azureServiceConnectionId)
+                appName: $(webAppName)
+                package: $(Pipeline.Workspace)/drop/$(Build.BuildId).zip
+                startUpCommand: 'python app.py'
 # - stage: Deploy
 #   displayName: 'Deploy Web App'
 #   dependsOn: Build
@@ -65,8 +74,6 @@ stages:
 #       runOnce:
 #         deploy:
 #           steps:
-#           - script: |
-#               echo "test"
           # - task: UsePythonVersion@0
           #   inputs:
           #     versionSpec: '$(pythonVersion)'
