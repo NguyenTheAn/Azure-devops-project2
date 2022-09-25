@@ -30,7 +30,8 @@ stages:
       vmImage: $(vmImageName)
     steps:
     - script: |
-        conda activate test
+        python -m venv antenv
+        source antenv/bin/activate
         make install
       workingDirectory: $(projectRoot)
       displayName: "Install requirements"
